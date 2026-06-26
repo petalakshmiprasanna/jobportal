@@ -20,9 +20,15 @@ public class job {
         System.out.println("skill required is"+this.skill);
         System.out.println("company is"+this.company);
         System.out.println("year is"+this.year);
+        System.out.println(".............................");
     }
+    public int getyear(){
+        return year;
+    
+    }
+    
         
-    }
+}
 
     
 

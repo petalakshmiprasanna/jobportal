@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class main {
+public class Main{
     public static void main(String[] args) {
-        ArrayList jobs=new ArrayList<>();
-        ArrayList applications = new ArrayList<>();
+        ArrayList<job> jobs=new ArrayList<>();
+        ArrayList<applicantdetails> applications = new ArrayList<>();
         Scanner sc=new Scanner(System.in);
+        jobprovider jobprovider=new jobprovider();
+        applicant applicant=new applicant();
         while(true){
             System.out.println("welcome to job portal");
             System.out.println("Enter an option");
@@ -24,10 +26,15 @@ public class main {
                         option=sc.nextInt();
                          switch(option){
                             case 1:
-                                System.out.println("job id");
-                                System.out.println("job role");
-                                System.out.println("salary in lpa");
-                                System.out.println("skills");
+                                jobprovider.addjob(jobs, sc);
+                                break;
+                            case 2:
+                                jobprovider.viewjobs(jobs);
+                                break;
+                            case 3:
+                                jobprovider.viewapplicants(applications);
+                                break;
+                            case 4:
                                 break;
                              default:
                                 System.out.println("enter valid option");   
@@ -37,7 +44,7 @@ public class main {
 
                     }
                     while(option!=4);
-                System.out.println("job provider");
+                    break;
                 case 2:
                     do{
                         System.out.println("1==>view jobs");
@@ -47,13 +54,16 @@ public class main {
                         option=sc.nextInt();
                          switch(option){
                             case 1:
-                                System.out.println("all jobs");
+                                jobprovider.viewjobs(jobs);
+
                                 break;
                             case 2:
-                                System.out.println("filter by year");    
+                                applicant.filterbyyear(jobs,sc);    
                                 break;
                             case 3:    
-                                System.out.println("'apply jobs");
+                                applicant.seekerapplications(applications,sc);
+                                break;
+                            case 4:
                                 break;
                              default:
                                 System.out.println("enter valid option");   
@@ -61,15 +71,15 @@ public class main {
                             }    
                          }
                     while (option!=4);
-                         
+                    break;     
                     
 
                 case 3:
                     System.out.println("Thank you");
-                    break;
+                    return;
                 default:
                     System.err.println("enter valid option");
-                    break;    
+                        
                 }        
             }
                     

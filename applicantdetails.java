@@ -1,11 +1,11 @@
 public class applicantdetails{
     private String name;
     private long phno;
-    private string email;
+    private String email;
     private int passedout;
     private double cgpa;
     private int jobid;
-    public void applyjob(String name,long phno, String email,int passedout,double cgpa,int jobid){
+    public  applicantdetails(String name,long phno, String email,int passedout,double cgpa,int jobid){
         this.name=name;
         this.phno=phno;
         this.email=email;
